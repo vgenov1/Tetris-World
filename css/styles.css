@@ -1,0 +1,12 @@
+.playfield {
+    width: 600px;
+    margin: 20px auto;
+    border: 2px solid #ccc;
+}
+
+.cell {
+    width: 10px;
+    height: 10px;
+    float: left;
+    position: relative;
+}
