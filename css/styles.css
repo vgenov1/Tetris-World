@@ -1,12 +1,16 @@
-.playfield {
-    width: 600px;
-    margin: 20px auto;
-    border: 2px solid #ccc;
+body {
+	background: #000;
 }
-
-.cell {
-    width: 10px;
-    height: 10px;
-    float: left;
-    position: relative;
+.playfield {
+	margin: 30px auto;
+}
+.playfield::after {
+    content: ' ';
+    display: block;
+    clear: both;
+}
+td {
+    width: 25px;
+    height: 25px;
+    border: 1px solid #9E9E9E;
 }

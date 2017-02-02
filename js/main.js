@@ -1,1 +1,1 @@
-const game = new Game('playfield1');
+const game = new Game('playfield');

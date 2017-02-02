@@ -1,55 +1,19 @@
 const Playfield = (function() {
-    let playfielddCells = [
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    ];
-    class Playfield {
-        constructor($container,pieces ) {
-            this.$container = $container;
-            this.pieces = pieces;
 
-            this.render();
+    class Playfield {
+        constructor($container) {
+            this.$container = $container;
+
+            this.drawGrid();
         }
 
-        render() {
-
-            for(let i = 0; i < playfielddCells.length; i++) {
-                let cols = playfielddCells[i];
-
-                for(let j = 0; j < cols.length; j++) {
-                    let $div = this.$createCell(i, j);
-
-                    this.$container.appendChild($div);
+        drawGrid () {
+            for(let row = 0; row < 22; row++){
+                $('#playfield').append('<tr class="'+row+'"></tr>');
+                for (let col = 0; col < 10; col++){
+                    $('.'+row).append('<td id="'+ col +'"></td>');
                 }
             }
-        }
-
-        $createCell(row, col) {
-            let $div = document.createElement('div');
-            $div.setAttribute('class', 'cell');
-
-
-            return $div;
         }
     }
 
