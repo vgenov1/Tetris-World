@@ -1,17 +1,71 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Tetris World</title>
-        <link rel="stylesheet" href="css/reset.css">
-        <link rel="stylesheet" href="css/styles.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    </head>
-    <body>
-        <table class="playfield" id='playfield'></table>
-
-        <script type="text/javascript" src = "js/game.js"></script>
-        <script type="text/javascript" src = "js/playfield.js"></script>
-        <script type="text/javascript" src = "js/main.js"></script>
-    </body>
+<head>
+	<meta charset="UTF-8"/>
+	<title>Tetris World</title>
+	<link href="http://fonts.googleapis.com/css?family=Play:400,700" rel="stylesheet"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+	<link href="./css/style.css" rel="stylesheet"/>
+	<link href="./img/favicon.png" rel="shortcut icon"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+	<header>
+		<div class="wrap">
+			<h1>Tetris World</h1>
+			<div class="sub-heading">Play&Fun</div>
+		</div>
+		<div class="funny-border"></div>
+	</header>
+	<section class="intro" id="introSection">
+		<div class="wrap">
+			<ul class="intro-list">
+				<li>
+					<div class="intro-list-heading">Learn how to Play</div>
+					<div id="test">
+						<span class="intro-img">
+							<i class="fa fa-leanpub" aria-hidden="true"></i>
+						</span>
+					</div>
+					<div class="intro-text-box dN">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae nisi ipsum. Aliquam erat volutpat. Ut sed massa at urna gravida fringilla at in diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</div>
+				</li>
+				<li>
+					<div class="intro-list-heading">Choose Level</div>
+					<div>
+						<span class="intro-img">
+							<i class="fa fa-level-down" aria-hidden="true"></i>
+							<i class="fa fa-level-up" aria-hidden="true"></i>
+						</span>
+					</div>
+					<div class="intro-list-box dN">
+						<span><i class="fa fa-angle-left" aria-hidden="true"></i></span>
+						<span>1</span>
+						<span><i class="fa fa-angle-right" aria-hidden="true"></i></span>
+					</div>
+				</li>
+				<li>
+					<div class="intro-list-heading">Try yourself</div>
+					<div>
+						<span class="intro-img">
+							<i class="fa fa-play-circle" aria-hidden="true"></i>
+						</span>	
+					</div>
+				</li>
+			</ul>
+		</div>
+	</section>
+	<section class="play-section dN" id="playSection">
+		<div class="wrap">
+			<table class="playfield" id='playfield'></table>
+			<div class="game-over-popUp dNI">
+				<div class="popUp-content">
+					<span>Game Over</span>
+					<span class="button">New Game</span>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script src="js/main.js"></script>
+	<script type="text/javascript" src = "js/game.js"></script>
+</body>
 </html>
