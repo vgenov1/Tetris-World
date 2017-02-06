@@ -1,0 +1,197 @@
+*{
+	box-sizing: border-box;
+}
+/*Font for Logo*/
+@font-face {
+    font-family: logoFont;
+    src: url("./font/arcade.regular.ttf");
+}
+/*Main elements*/
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	font: normal 16px/1 'Play', sans-serif;
+	background: #d9dddb;
+	color: #1a1c1b;
+	/*overflow: hidden;*/
+}
+.wrap {
+	margin: 0 auto;
+	max-width: 1170px;
+}
+header {
+	width: 100%;
+	text-align: center;
+	background: #1a1c1b;
+	color: #fff;
+}
+h1 {
+	/*font-family: logoFont;*/
+	margin: 0 0 10px;
+	font-size: 50px;
+}
+.sub-heading {
+	font-size: 25px;
+}
+ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+.dN {display: none;transition: all 0.6s ease;}
+.dNI {display: none!important;transition: all 0.6s ease;}
+.ligthBlue {color: #31a9c8;}
+/*Main elements End*/
+header .wrap {
+	padding: 100px 20px 107px;
+}
+header .funny-border {
+	height: 8px;
+	background: #1fd91f; /* For browsers that do not support gradients */
+	background: -webkit-linear-gradient(left, #2626f5, #9f1ae1, #1cc3c3, #1fd91f, #f2f22f, #fc5e08, #f42020); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(right, #2626f5, #9f1ae1, #1cc3c3, #1fd91f, #f2f22f, #fc5e08, #f42020); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(right, #2626f5, #9f1ae1, #1cc3c3, #1fd91f, #f2f22f, #fc5e08, #f42020); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(to right, #2626f5, #9f1ae1, #1cc3c3, #1fd91f, #f2f22f, #fc5e08, #f42020); /* Standard syntax */
+}
+.smaller-header .wrap {
+	padding: 15px 20px;
+	transition: all 0.8s ease;
+}
+.smaller-header h1 {
+	margin-bottom: 5px;
+	font-size: 30px;
+}
+.smaller-header .sub-heading {
+	font-size: 18px;
+}
+.smaller-header .funny-border {
+	height: 5px;
+}
+.intro .wrap {
+	padding: 100px 20px 20px;
+}
+.intro-list {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+}
+.intro-list li {
+    width: 33%;
+    text-align: center;
+}
+.intro-list li .intro-list-heading {
+	margin-bottom: 35px;
+	font-size: 24px;
+	font-weight: 600;
+}
+.intro-list li .intro-list-sub-heading {
+	margin-bottom: 35px;
+	font-size: 20px;
+}
+.intro-list li .fa {
+	font-size: 100px;
+}
+.intro-list li .intro-img {
+	display: inline-block;
+	transition: all 0.6s ease;
+	cursor: pointer;
+}
+.intro-list li .intro-img:hover {
+	transform: scale(1.2, 1.2);
+	transition: all 0.6s ease;
+	/*color: #28da20;*/
+	/*color: #1fd91f;*/
+	color: #0aca0a;
+}
+.intro-list li .intro-img:hover .fa-leanpub {
+	color: #31a9c8;
+}
+.intro-list li .intro-img:hover .fa-play-circle {
+	color: #fc5a0a;
+}
+/*.intro-list li .intro-list-box {
+	display: none;
+}*/
+.intro-list li:first-child .intro-list-box {
+	text-align: left;
+}
+.intro-list li .intro-text-box {
+	margin: 0 auto;
+	padding: 10px;
+    border: 5px solid #31a9c8;
+    border-radius: 3px;
+    width: 80%;
+    text-align: left;
+}
+.play-section {
+	position: relative;
+	background: #1a1c1b;
+}
+.play-section .wrap {
+	padding: 33px 20px;
+}
+.play-section .playfield {
+	margin: 0 auto;
+}
+.play-section .playfield::after {
+    content: ' ';
+    display: block;
+    clear: both;
+}
+.play-section table {
+	border-collapse: separate;
+	border-spacing: 0;
+    border: 1px solid #373837;
+    /*border: 1px solid #1a1c1b;*/
+}
+.play-section td {
+    width: 23px;
+    height: 23px;
+    /*border: 1px solid #1a1c1b;*/
+    border: 1px solid #373837;
+}
+.play-section .game-over-popUp {
+	position: absolute;
+    border: 1px solid #000;
+    margin: 0 auto;
+    width: 232px;
+    height: 508px;
+    background: rgba(0,0,0,0.6);
+    top: 5.8%;
+    left: 0;
+    right: 0;
+    display: -webkit-flex;
+	display: flex;
+	-webkit-flex-flow: row;
+	flex-flow: row wrap;
+	-webkit-justify-content: center;
+	justify-content: center;
+	align-items: center;
+}
+.play-section .game-over-popUp .popUp-content {
+    padding: 50px 10px;
+    border-radius: 5px;
+    width: 85%;
+    font-size: 30px;
+    text-align: center;
+	color: #d9dddb;
+    background: #000;
+}
+.play-section .game-over-popUp .popUp-content span {
+	display: inline-block;
+}
+.play-section .game-over-popUp .popUp-content .button {
+    margin-top: 30px;
+    padding: 10px 15px;
+    border-radius: 5px;
+	font-size: 25px;
+    background: #0aca0a;
+    color: #fff;
+    cursor: pointer;
+}
+.play-section .game-over-popUp .popUp-content .button:hover {background:#0ef30e;}
+.play-section .game-over-popUp .popUp-content .button:active {background:#0faf0f;}
