@@ -5,8 +5,8 @@
 	<title>Tetris World</title>
 	<link href="http://fonts.googleapis.com/css?family=Play:400,700" rel="stylesheet"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
-	<link href="./css/style.css" rel="stylesheet"/>
 	<link href="./img/favicon.png" rel="shortcut icon"/>
+	<link href="./css/style.css" rel="stylesheet"/>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 <body>
@@ -22,33 +22,33 @@
 			<ul class="intro-list">
 				<li>
 					<div class="intro-list-heading">Learn how to Play</div>
-					<div id="test">
+					<div id="howToPlay">
 						<span class="intro-img">
 							<i class="fa fa-leanpub" aria-hidden="true"></i>
 						</span>
 					</div>
 					<div class="intro-text-box dN">
-						<p>
-							1. Start the game on the lowest level; <br><br>
-							2. Move the tetrominoes left and right with the arrow keys while they fall; <br><br>
-							3. Use the up arrow key to rotate the tetrominoes to fit holes;<br><br>
-							4. Use the down arrow key to accelerate the fall;<br><br>
-							5. Complete lines to gain points and raise the level;
-					</p>
+						<ol>
+							<li>Start the game on the lowest level</li>
+							<li>Move the tetrominoes left and right with the arrow keys while they fall</li>
+							<li>Use the up arrow key to rotate the tetrominoes to fit holes</li>
+							<li>Use the down arrow key to accelerate the fall</li>
+							<li>Complete lines to gain points and raise the level</li>
+						</ol>
 				</div>
 				</li>
 				<li>
 					<div class="intro-list-heading">Choose Level</div>
-					<div>
-						<span class="intro-img">
+					<div id="chooseLevel">
+						<span class="intro-img choose-level">
 							<i class="fa fa-level-down" aria-hidden="true"></i>
 							<i class="fa fa-level-up" aria-hidden="true"></i>
 						</span>
 					</div>
 					<div class="intro-list-box dN">
-						<span><i class="fa fa-angle-left" aria-hidden="true"></i></span>
-						<span>1</span>
-						<span><i class="fa fa-angle-right" aria-hidden="true"></i></span>
+						<i class="fa fa-angle-left" aria-hidden="true"></i>
+						<span class="level-size">1</span>
+						<i class="fa fa-angle-right" aria-hidden="true"></i>
 					</div>
 				</li>
 				<li>
@@ -65,7 +65,7 @@
 	<section class="play-section dN" id="playSection">
 		<div class="wrap">
 			<table class="playfield" id='playfield'></table>
-			<div class="game-over-popUp dNI">
+			<div class="game-over-popUp dNI" id="popUpGameOver">
 				<div class="popUp-content">
 					<span>Game Over</span>
 					<span class="button">New Game</span>
@@ -74,6 +74,6 @@
 		</div>
 	</section>
 	<script src="js/main.js"></script>
-	<script type="text/javascript" src = "js/game.js"></script>
+	<script src="js/game.js"></script>
 </body>
 </html>

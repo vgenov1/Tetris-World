@@ -1,7 +1,12 @@
 $(document).ready(function(){
 	$('.fa-leanpub').click( function () {
-			$('#test').addClass('dN');
+			$('#howToPlay').addClass('dN');
 			$('.intro-text-box').removeClass('dN');
+		});
+
+	$('.choose-level').click( function () {
+			$('#chooseLevel').addClass('dN');
+			$('.intro-list-box').removeClass('dN');
 		});
 
 	$('.fa-play-circle').click( function () {

@@ -1,21 +1,25 @@
 //Global object
 const tetris = {};
 
+tetris.gridCreated = false;
+
 //Draw the grid
 tetris.drawGrid = function() {
-	for(let row = 0; row < 22; row++){
-		$('#playfield').append('<tr class="'+row+'"></tr>');
-		for (let col = 0; col < 10; col++){
-			let $cell = $('.'+row).append('<td id="'+ col +'"></td>');
-			$cell.attr('bgcolor',this.emptyColor);
+	if (!this.gridCreated) {
+		for(let row = 0; row < 22; row++){
+			$('#playfield').append('<tr class="'+row+'"></tr>');
+			for (let col = 0; col < 10; col++){
+				let $cell = $('.'+row).append('<td id="'+ col +'"></td>');
+				$cell.attr('bgcolor',this.emptyColor);
+			}
 		}
+	this.gridCreated = true;
 	}
 }
 
 //Variables
 tetris.currentCoor = [{row:1,col:1},{row:1,col:2},{row:2,col:1},{row:2,col:2}];
 tetris.emptyColor='#1a1c1b';
-//tetris.emptyColor='#d9dddb';
 tetris.currentShape = 'L';
 tetris.origin = {row:1,col:5};
 tetris.currentColor = '#fc5e08';
@@ -113,7 +117,7 @@ tetris.rotate = function(){
 }
 
 //Define all shapes
-tetris.shapeToCoor = function(shape,origin){// origin e centyra na figurata
+tetris.shapeToCoor = function(shape,origin){
 	if(shape === 'L'){
 		return [{row:origin.row,col:origin.col},{row:origin.row-1,col:origin.col},{row:origin.row+1,col:origin.col},{row:origin.row+1,col:origin.col+1}]
 	} else if(shape === 'J'){
@@ -242,7 +246,20 @@ tetris.emptyFullRow = function() {
 	}
 }
 
+
+//New game
+tetris.newGame = function() {
+	for(let row = 0; row < 22; row++){
+		for (let col = 0; col < 10; col++){
+			 let $cell = $('.'+row).find('#'+col);
+			$cell.attr('bgcolor',this.emptyColor);
+		}
+	}
+
+}
+
 $('.fa-play-circle').click(function(){
+	$('body').addClass('changeBg');
 	tetris.drawGrid();
 	tetris.currentCoor = tetris.shapeToCoor(tetris.currentShape,tetris.origin);
 	tetris.fillCells(tetris.currentCoor,tetris.currentColor);
@@ -264,9 +281,16 @@ $('.fa-play-circle').click(function(){
 	let freeFall = setInterval(function (){
 		tetris.dropDownShape();
 	},500);
+
 	tetris.endGame = function() {
 		clearInterval(freeFall);
 		$(document).off('keydown');
 		$('.game-over-popUp').removeClass('dNI');
 	};
 })
+
+$('.button').click(function() {
+		$('#popUpGameOver').addClass('dNI');
+		tetris.newGame();
+		$('.fa-play-circle').click();
+	});

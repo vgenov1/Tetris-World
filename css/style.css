@@ -1,11 +1,6 @@
 *{
 	box-sizing: border-box;
 }
-/*Font for Logo*/
-@font-face {
-    font-family: logoFont;
-    src: url("./font/arcade.regular.ttf");
-}
 /*Main elements*/
 body {
 	margin: 0;
@@ -14,7 +9,10 @@ body {
 	font: normal 16px/1 'Play', sans-serif;
 	background: #d9dddb;
 	color: #1a1c1b;
-	/*overflow: hidden;*/
+	overflow: hidden;
+}
+.changeBg {
+	background: #1a1c1b;
 }
 .wrap {
 	margin: 0 auto;
@@ -27,24 +25,27 @@ header {
 	color: #fff;
 }
 h1 {
-	/*font-family: logoFont;*/
 	margin: 0 0 10px;
 	font-size: 50px;
 }
 .sub-heading {
 	font-size: 25px;
 }
-ul {
+ul, ol {
 	margin: 0;
 	padding: 0;
+}
+ul {
 	list-style-type: none;
 }
 .dN {display: none;transition: all 0.6s ease;}
 .dNI {display: none!important;transition: all 0.6s ease;}
 .ligthBlue {color: #31a9c8;}
 /*Main elements End*/
+
+/*CSS Header Star*/
 header .wrap {
-	padding: 100px 20px 107px;
+	padding: 9% 20px;
 }
 header .funny-border {
 	height: 8px;
@@ -55,21 +56,24 @@ header .funny-border {
 	background: linear-gradient(to right, #2626f5, #9f1ae1, #1cc3c3, #1fd91f, #f2f22f, #fc5e08, #f42020); /* Standard syntax */
 }
 .smaller-header .wrap {
-	padding: 15px 20px;
+	padding: 10px 20px;
 	transition: all 0.8s ease;
 }
 .smaller-header h1 {
 	margin-bottom: 5px;
-	font-size: 30px;
+	font-size: 28px;
 }
 .smaller-header .sub-heading {
-	font-size: 18px;
+	font-size: 16px;
 }
 .smaller-header .funny-border {
 	height: 5px;
 }
+/*CSS Header End*/
+
+/*CSS Introduction Section Start*/
 .intro .wrap {
-	padding: 100px 20px 20px;
+	padding: 3.5% 20px 20px;
 }
 .intro-list {
 	display: -webkit-flex;
@@ -84,7 +88,7 @@ header .funny-border {
     text-align: center;
 }
 .intro-list li .intro-list-heading {
-	margin-bottom: 35px;
+	margin-bottom: 30px;
 	font-size: 24px;
 	font-weight: 600;
 }
@@ -97,42 +101,65 @@ header .funny-border {
 }
 .intro-list li .intro-img {
 	display: inline-block;
-	transition: all 0.6s ease;
+	transition: all 0.8s ease;
 	cursor: pointer;
 }
 .intro-list li .intro-img:hover {
 	transform: scale(1.2, 1.2);
-	transition: all 0.6s ease;
-	/*color: #28da20;*/
-	/*color: #1fd91f;*/
-	color: #0aca0a;
+	transition: all 0.8s ease;
 }
 .intro-list li .intro-img:hover .fa-leanpub {
 	color: #31a9c8;
 }
+.intro-list li .intro-img:hover .fa-level-down, 
+.intro-list li .intro-img:hover .fa-level-up {
+	color: #0aca0a;
+
+}
 .intro-list li .intro-img:hover .fa-play-circle {
 	color: #fc5a0a;
 }
-/*.intro-list li .intro-list-box {
-	display: none;
-}*/
-.intro-list li:first-child .intro-list-box {
-	text-align: left;
+.intro-list li .intro-text-box,
+.intro-list li .intro-list-box {	
+	margin: 0 auto;
 }
 .intro-list li .intro-text-box {
-	margin: 0 auto;
-	padding: 10px;
-    border: 5px solid #31a9c8;
-    border-radius: 3px;
+    border-top: 5px solid #31a9c8;
+	padding: 10px 5px 0 25px;
     width: 80%;
-    text-align: left;
 }
+.intro-list li .intro-text-box ol li {
+    text-align: left;
+	width: 100%;
+}
+.intro-list li .intro-list-box {
+	border-top: 5px solid #0aca0a;
+	padding-top: 10px;
+	width: 70%;
+}
+.intro-list li .intro-list-box .fa-angle-left,
+.intro-list li .intro-list-box .fa-angle-right {
+	cursor: pointer;
+}
+.intro-list li .intro-list-box .fa-angle-left:hover,
+.intro-list li .intro-list-box .fa-angle-right:hover {
+	transition: all 0.6s ease;
+	color: #0aca0a;
+}
+.intro-list li .intro-list-box .level-size {
+    margin: 0 10px;
+	display: inline-block;
+    font-size: 100px;
+}
+/*CSS Introduction Section End*/
+
+/*CSS Play Section Start*/
 .play-section {
 	position: relative;
 	background: #1a1c1b;
 }
 .play-section .wrap {
-	padding: 33px 20px;
+	padding: 33px 10px 20px;
 }
 .play-section .playfield {
 	margin: 0 auto;
@@ -146,12 +173,10 @@ header .funny-border {
 	border-collapse: separate;
 	border-spacing: 0;
     border: 1px solid #373837;
-    /*border: 1px solid #1a1c1b;*/
 }
 .play-section td {
     width: 23px;
     height: 23px;
-    /*border: 1px solid #1a1c1b;*/
     border: 1px solid #373837;
 }
 .play-section .game-over-popUp {
@@ -195,3 +220,4 @@ header .funny-border {
 }
 .play-section .game-over-popUp .popUp-content .button:hover {background:#0ef30e;}
 .play-section .game-over-popUp .popUp-content .button:active {background:#0faf0f;}
+/*CSS Play Section End*/
